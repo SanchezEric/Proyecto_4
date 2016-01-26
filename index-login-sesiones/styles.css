@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+
+header {
+	background-image: url("imagenes/logo.png");
+	display: block;
+	margin:0 auto 0 auto;
+	width: 35%;
+	height: 30%;
+	background-repeat: no-repeat;
+
+	
+}
+
+body {
+	background: url("imagenes/fondo12.png") no-repeat center center fixed;
+    background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+
+}
+
+.cuadrostexto {
+	width: 250px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	text-align: center;
+}
+
+form
+{
+   padding:2px;
+   display:block;
+   width:290px;
+   margin: 0 auto;
+   text-align:left;
+}  
+
+label {
+    display: block;
+    text-align: center;
+    line-height: 150%;
+}
+
+p {
+	display: block;
+    text-align: center;
+    line-height: 150%;
+    font-size: .85em;
+}
+
+
