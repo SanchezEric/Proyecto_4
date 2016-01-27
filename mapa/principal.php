@@ -125,7 +125,7 @@
                   $idUbicacion=$contacto['id_ubicacion'];
                   $latitud=$contacto['casa_lat'];
                   $longitud=$contacto['casa_lon'];
-                  echo "<input type='button' value='".utf8_encode($contacto['nombre_contacto'])." ".utf8_encode($contacto['apellidos_contacto'])."'>";
+                  echo "<input type='button' onclick='cargaContenido();' value='".utf8_encode($contacto['nombre_contacto'])." ".utf8_encode($contacto['apellidos_contacto'])."'>";
                 }
               }
             }
