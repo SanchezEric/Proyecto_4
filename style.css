@@ -14,6 +14,7 @@ header{
 	width: 100%;
 	height: 30px;
 	margin: 1% 0 0 0;
+	
 }
 
 #bienvenida{
@@ -22,13 +23,57 @@ header{
 	height: 100%;
 }
 
+#btnperfil{
+	height: 100%;
+	float: right;
+	margin-right: 15px;
+	vertical-align: middle;
+	border: 1px black solid;
+}
+
+#btncontactos{
+	height: 100%;
+	float: right;
+	margin-right: 15px;
+	border: 1px black solid;
+}
+
+#btnlista{
+	height: 100%;
+	float: right;
+	margin-right: 15px;
+	border: 1px black solid;
+}
+
+#btnperfil{
+	height: 100%;
+	float: right;
+	margin-right: 15px;
+	border: 1px black solid;
+}
+
 #btnlogout{
 	height: 100%;
 	float: right;
 	border: 1px black solid;
 }
 
+
+#btncontactos a{
+	text-decoration: none;
+	color: black;
+}
+
 #btnlogout a{
+	text-decoration: none;
+	color: black;
+}
+#btnlista a{
+	text-decoration: none;
+	color: black;
+}
+
+#btnperfil a{
 	text-decoration: none;
 	color: black;
 }

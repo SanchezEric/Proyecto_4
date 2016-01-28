@@ -7,21 +7,21 @@
 	</header>
 <body>
 	<?php 
- include('login.php');
 
  	//Miramos si la variable Sesion existe y enviamos a la pagina perfil
-	if(isset($_SESSION['login_user'])){
+	if(isset($_SESSION['mail'])){
 	 	header('location:principal.php');
 	} else{
 		echo "<div>";
-		echo "<form id='form1' action='login.php' method='POST'>";
+		echo "<form id='form1' action='login.php' method='get'>";
 		echo "<label>Usuario</label>"; 
-		echo "<p/><input type='text' class='cuadrostexto' name='usuario'>";
+		echo "<p/><input type='text' class='cuadrostexto' name='mail'>";
 		echo "</br></br>";
 		echo "<label>Contraseña</label>"; 
 		echo "<p><input type='password' class='cuadrostexto' name='password'></p>";
-		echo "<p><input type='submit' name='submit' value='Identificarse'></p>";
+		echo "<p><input type='submit' name='submit' value='Identificarse'>";
 		echo "</form>";
+		echo "<p><form id='form1' action='registro.php'><input type=submit value='Registrate'></form></p>";
 		echo "</div>";
 	}
 
