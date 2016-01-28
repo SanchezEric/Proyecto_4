@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-01-2016 a las 08:55:15
+-- Tiempo de generación: 28-01-2016 a las 19:29:28
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `contacto` (
   `apellidos_contacto` varchar(40) DEFAULT NULL,
   `id_ubicacion` int(11) DEFAULT NULL,
   `id_lista` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `contacto`
@@ -40,10 +40,13 @@ CREATE TABLE IF NOT EXISTS `contacto` (
 
 INSERT INTO `contacto` (`id_contacto`, `nombre_contacto`, `apellidos_contacto`, `id_ubicacion`, `id_lista`) VALUES
 (1, 'Brian', 'Flores Casco', 1, 1),
-(2, 'Felipe', 'Iglesias', 2, 1),
-(3, 'Alexis', 'Toledo Ruiz', 3, 2),
-(4, 'Jordi', 'Cabrera Nieto', 4, 2),
-(5, 'Pablo', 'López Tablero', 5, 2);
+(2, 'Felipe', 'Iglesias', 2, 6),
+(3, 'Alexis', 'Toledo Ruiz', 3, 1),
+(4, 'Jordi', 'Cabrera Nieto', 4, 6),
+(6, 'Carlos', 'Pi Lopez', 6, 3),
+(7, 'Antonio', 'Gala Perez', 7, 3),
+(9, 'Paco', 'Porras', 8, 6),
+(16, 'Eric', 'Sanchez Cherto', 24, 1);
 
 -- --------------------------------------------------------
 
@@ -56,15 +59,17 @@ CREATE TABLE IF NOT EXISTS `lista` (
   `id_usuario` int(11) DEFAULT NULL,
   `nombre_lista` varchar(30) DEFAULT NULL,
   `descripcion_lista` text
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `lista`
 --
 
 INSERT INTO `lista` (`id_lista`, `id_usuario`, `nombre_lista`, `descripcion_lista`) VALUES
-(1, 1, 'Colegas del barrio', 'Grupo de los amigos de toda la vida del barrio'),
-(2, 1, 'Tetes', 'Mis tetes to rocosos');
+(1, 1, 'Colegas del barrio totale', 'Grupo de los amigos de toda la vida del barrio'),
+(3, 2, 'Hermanos de no sangre', 'La familia que no se escoge loko'),
+(6, NULL, 'Sin Lista', 'Usuarios sin lista'),
+(7, 1, 'prueba1', 'lista de prueba');
 
 -- --------------------------------------------------------
 
@@ -99,18 +104,21 @@ CREATE TABLE IF NOT EXISTS `ubicacion` (
   `casa_lon` varchar(30) DEFAULT NULL,
   `trabajo_lat` varchar(30) DEFAULT NULL,
   `trabajo_lon` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `ubicacion`
 --
 
 INSERT INTO `ubicacion` (`id_ubicacion`, `casa_lat`, `casa_lon`, `trabajo_lat`, `trabajo_lon`) VALUES
-(1, '41.356228', '2.111686', NULL, NULL),
+(1, '41.356228', '2.111686', '', ''),
 (2, '41.352509', '2.111117', '41.349650', '2.107888'),
-(3, '41.356157', '2.113381', NULL, NULL),
+(3, '41.356157', '2.113381', '', ''),
 (4, '41.353443', '2.110946', NULL, NULL),
-(5, '41.363445', '2.109712', NULL, NULL);
+(6, '41.3676081', '2.0669006', NULL, NULL),
+(7, '41.3662135', '2.0715953', NULL, NULL),
+(8, '41.3676481', '2.0789006', NULL, NULL),
+(24, '41.39622', '2.111699', '', '');
 
 -- --------------------------------------------------------
 
@@ -127,14 +135,15 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `direccion_usuario` varchar(60) DEFAULT NULL,
   `telefono_usuario` varchar(9) DEFAULT NULL,
   `nivel_usuario` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`id_usuario`, `password`, `nombre_usuario`, `apellidos_usuario`, `mail_usuario`, `direccion_usuario`, `telefono_usuario`, `nivel_usuario`) VALUES
-(1, '7df7c7fce24d21d2136719167a3743dc', 'Víctor', 'Cruz Lara', 'victor.cruz@gmail.com', 'Calle Francia', '933366987', 1);
+(1, '6e6e2ddb6346ce143d19d79b3358c16a', 'Victorciyo', 'Cruz Lara', 'victor.cruz@gmail.com', 'Calle Francia', '933366987', 2),
+(2, '827ccb0eea8a706c4c34a16891f84e7b', 'Raul', 'Calvo Ramiro', 'fcb_raul@hotmail.com', 'Calle Frederic Soler', '933754212', 3);
 
 --
 -- Índices para tablas volcadas
@@ -178,12 +187,12 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `contacto`
 --
 ALTER TABLE `contacto`
-MODIFY `id_contacto` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+MODIFY `id_contacto` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT de la tabla `lista`
 --
 ALTER TABLE `lista`
-MODIFY `id_lista` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id_lista` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `nivel`
 --
@@ -193,12 +202,12 @@ MODIFY `id_nivel` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT de la tabla `ubicacion`
 --
 ALTER TABLE `ubicacion`
-MODIFY `id_ubicacion` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+MODIFY `id_ubicacion` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- Restricciones para tablas volcadas
 --
