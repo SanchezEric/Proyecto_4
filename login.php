@@ -12,9 +12,9 @@
 			$_SESSION['apellidos']=$usu['apellidos_usuario'];
 			$_SESSION['nivel']=$usu['nivel_usuario'];
 		}
-		header("Location: principal.php");
+		header("location: principal.php");
 	}else{
 		$_SESSION['error']="Usuario y/o contraseña incorrectas";
-		header("Location: index.php");
+		header("location: index.php");
 	}
 ?>

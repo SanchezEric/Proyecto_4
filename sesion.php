@@ -1,6 +1,6 @@
 <?php
 //Conectamos con el servidor y la base de datos
-$conexion = mysqli_connect('localhost','root','DAW22015','bd_proyecto_david');
+$conexion = mysqli_connect('localhost','root','DAW22015','bd_mycontacts');
 
 //Inciamos la sesion
 session_start();
@@ -9,12 +9,12 @@ session_start();
 $user = $_SESSION['login_user'];
 
 //Creamos la consulta 
-$sql = ("SELECT * FROM tbl_usuario WHERE usu_id ='$user'");
+$sql = ("SELECT * FROM usuario WHERE id_usuario ='$user'");
 
 $datos = mysqli_query($conexion,$sql);
 
 $row = mysqli_fetch_assoc($datos);
 
-$login_sesion = $row['usu_id'];
+$login_sesion = $row['id_usuario'];
 
 ?>

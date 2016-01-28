@@ -2,7 +2,6 @@
 /* CSS Document */
 
 header {
-	background-image: url("imagenes/logo.png");
 	display: block;
 	margin:0 auto 0 auto;
 	width: 35%;
@@ -13,7 +12,7 @@ header {
 }
 
 body {
-	background: url("imagenes/fondo12.png") no-repeat center center fixed;
+	background: url("./imagenes/fondo12-4.png") no-repeat center center fixed;
     background-size: 100% 100%;
     -moz-background-size: 100% 100%;
     -webkit-background-size: 100% 100%;
