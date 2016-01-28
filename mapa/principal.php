@@ -17,6 +17,7 @@
     <script type="text/javascript">
       var map;
       var latitud, longitud;
+      var markers = [];
 
       function initMap() {
         map = new google.maps.Map(document.getElementById('mapa'), {
@@ -25,7 +26,17 @@
           mapTypeId:google.maps.MapTypeId.ROADMAP,
           zoom: 16
         });
+        var marker = new google.maps.Marker({
+          map: map,
+          position: {lat: 41.3495464, lng: 2.1076887},
+          animation:google.maps.Animation.DROP  //DROP, BOUNCE
+        });
+        setTimeout("cambiar()", 3000);
         //cargaContenido();
+      }
+      function cambiar(){
+        var myLL = {lat: 41.3495450, lng: 2.1076887};
+        marker.setPosition(myLL);
       }
 
       var READY_STATE_UNINITIALIZED=0;
@@ -54,22 +65,52 @@
         }
       }
 
+      // function clearMarkers() {
+      //   alert("entra clear");
+      //   setMapOnAll(null);
+      //   alert("sale clear");
+      // }
+
+      // function deleteMarkers() {
+      //   alert("entra delete");
+      //   clearMarkers();
+      //   alert("sale clear2");
+      //   var markers = [];
+      // }
+
       function muestraContenido() {
+        //deleteMarkers();
+        //alert("nos vemos");
         if(peticion_http.readyState == READY_STATE_COMPLETE) {
           if(peticion_http.status == 200) {
             ///creamos los markers
             datosCargados=eval('('+peticion_http.responseText+')');
             for(var i=0;i<datosCargados.length;i++){
-              latitud = parseFloat(datosCargados[i].casa_lat);
-              longitud = parseFloat(datosCargados[i].casa_lon);
-              // alert(latitud+" - "+longitud);
-              var myLatLng = {lat: latitud, lng: longitud};
-              var marker = new google.maps.Marker({
-                map: map,
-                position: myLatLng,
-                animation:google.maps.Animation.DROP,  //DROP, BOUNCE
-                title: datosCargados[i].id_ubicacion
-              });
+              if(document.formulario.contactoUbic[i].checked){
+                if(markers[i] == 'no' || markers[i] == undefined){
+                  //alert("entra");
+                  latitud = parseFloat(datosCargados[i].casa_lat);
+                  longitud = parseFloat(datosCargados[i].casa_lon);
+                  // alert(latitud+" - "+longitud);
+                  var myLatLng = {lat: latitud, lng: longitud};
+                  var marker = new google.maps.Marker({
+                    map: map,
+                    position: myLatLng,
+                    animation:google.maps.Animation.DROP,  //DROP, BOUNCE
+                    title: datosCargados[i].id_ubicacion
+                  });
+                  markers[i]=marker;
+                  //alert(markers[i]);
+                  //alert(markers[i].title);
+                }
+              }else{
+                if((markers[i] != 'no') && (markers[i] != undefined)){
+                  //alert(markers[i]);
+                  markers[i].setMap(null);
+                }
+                markers[i]='no';
+                //alert(markers[i]);
+              }
             }
           }
         }
@@ -111,6 +152,7 @@
                 WHERE usuario.id_usuario=$_SESSION[id]";
           $datos=mysqli_query($con,$sql);
           $ubicacion = array();
+          echo "<form name='formulario'>";
           if(mysqli_num_rows($datos)){
             while($lista=mysqli_fetch_array($datos)){
               echo "<h4>".$lista['nombre_lista']."</h4>";
@@ -122,14 +164,12 @@
               $datos2=mysqli_query($con,$sql2);
               if(mysqli_num_rows($datos2)){
                 while($contacto=mysqli_fetch_array($datos2)){
-                  $idUbicacion=$contacto['id_ubicacion'];
-                  $latitud=$contacto['casa_lat'];
-                  $longitud=$contacto['casa_lon'];
-                  echo "<input type='button' onclick='cargaContenido();' value='".utf8_encode($contacto['nombre_contacto'])." ".utf8_encode($contacto['apellidos_contacto'])."'>";
+                  echo "<p>".utf8_encode($contacto['nombre_contacto'])." ".utf8_encode($contacto['apellidos_contacto'])."<input name='contactoUbic' type='checkbox' onclick='cargaContenido();'></p>";
                 }
               }
             }
           }
+          echo "</form>";
         ?>
       </article>
     </section>
