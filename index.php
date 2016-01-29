@@ -13,15 +13,15 @@
 	 	header('location:principal.php');
 	} else{
 		echo "<div>";
-		echo "<form id='form1' action='login.php' method='get'>";
-		echo "<label>Usuario</label>"; 
+		echo "<form id='form1' action='login.php' method='post'>";
+		echo "<label><strong>Direccion de correo electronico</strong></label>"; 
 		echo "<p/><input type='text' class='cuadrostexto' name='mail'>";
 		echo "</br></br>";
-		echo "<label>Contraseña</label>"; 
+		echo "<label><strong>Contraseña</strong></label>"; 
 		echo "<p><input type='password' class='cuadrostexto' name='password'></p>";
 		echo "<p><input type='submit' name='submit' value='Identificarse'>";
 		echo "</form>";
-		echo "<p><form id='form1' action='InsertUsuario.php'><input type=submit value='Registrate'></form></p>";
+		echo "<p><form id='form1' action='InsertUsuario.php'>¿A que esperas a registrarte? <input type='submit' name='submit' value='Registrate'></form></p>";
 		echo "</div>";
 	}
 

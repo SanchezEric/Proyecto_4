@@ -1,4 +1,4 @@
-<?php
+	<?php
 	session_start();
   	if(!isset($_SESSION['mail'])){
   	$_SESSION['error']="Tienes que logarte";
@@ -18,47 +18,47 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
-
-		
-
-			<article>
+		<header>
+		</header>
+		<section class="seccion">
+			<article class="tituloForm">
 				<h3>Modificar Usuarios</h3>
 			</article>
-
-			<article id = "Contactform">			
+			<article class= "Contactform">			
 				<form name="formModUsuarios" action="modificarperfil.proc.php" method="get">
 					<input type="hidden" name="idUsuario" value="<?php echo $prod['id_usuario']; ?>">
 
-					<strong>Nombre:</strong><br/>
-					<input type="text" name="nomUsuario" size="20" maxlength="25" value="<?php echo utf8_encode("$prod[nombre_usuario]"); ?>"required/><br/><br/>
+					<strong>Nombre:</strong>
+					<input type="text" name="nomUsuario" size="20" maxlength="25" value="<?php echo $prod['nombre_usuario']; ?>"required/>
 
-					<strong>Apellidos:</strong><br/>
-					<input type="text" name="apellidoUsuario" size="20" maxlength="25" value="<?php echo utf8_encode("$prod[apellidos_usuario]"); ?>"/><br/><br/>
+					<strong>Apellidos:</strong>
+					<input type="text" name="apellidoUsuario" size="20" maxlength="25" value="<?php echo $prod['apellidos_usuario']; ?>"/>
 
-					<strong>Mail:</strong><br/>
-					<input type="text" name="mailUsuario" size="20" maxlength="25" value="<?php echo $prod['mail_usuario']; ?>"/><br/><br/>
+					<strong>Mail:</strong>
+					<input type="text" name="mailUsuario" size="20" maxlength="25" value="<?php echo $prod['mail_usuario']; ?>"/>
 
-					<strong>Direccion:</strong><br/>
-					<input type="text" name="direccionUsuario" size="20" maxlength="25" value="<?php echo $prod['direccion_usuario']; ?>"/><br/><br/>
+					<strong>Direccion:</strong>
+					<input type="text" name="direccionUsuario" size="20" maxlength="25" value="<?php echo $prod['direccion_usuario']; ?>"/>
 
-					<strong>Telefono:</strong><br/>
-					<input type="text" name="telefonoUsuario" size="20" maxlength="25" value="<?php echo $prod['telefono_usuario']; ?>"/><br/><br/>
-					
-					
-
-					<input id="botonFormModContacto" type="submit" value="Submit">
-					<a href='cambiarcontrasenya.php'>Cambiar contraseña</a>
-				</form>
-			</article>
-
+					<strong>Telefono:</strong>
+					<input type="text" name="telefonoUsuario" size="20" maxlength="25" value="<?php echo $prod['telefono_usuario']; ?>"/>
+						
+					<input id="botonFormModContacto" type="submit" value="Modificar">
+					<button><a href='cambiarMiPassword.php'>Cambiar contraseña</a></button>
+					</form>
+				</article>
+			</section>
 		<?php
-		 
 			//cerramos la conexión con la base de datos
-		mysqli_close($con);
+			mysqli_close($con);
 		?>
-		<br/><br/>
-		<article>
-			<a font color= "black" href="principal.php">Volver</a>
+		
+		<article id="volver">
+			<button><a font color= "black" href="principal.php">Volver</a></button>
 		</article>
+		<footer id="piepagina">
+      <p id="componentes">Raúl Calvo - Víctor Cruz - Eric Sánchez</p>
+      <p id="copyright">2016 &copy; MyContacts</p>
+    </footer>
 	</body>
 </html>

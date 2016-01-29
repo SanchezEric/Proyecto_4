@@ -12,21 +12,26 @@
 
 <!DOCTYPE html>
 <html>
+<style>
+	    	a {color: blue;}
+	    </style>
 	<head>
 		<title>Mycontacts</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
-	<body>
 
+	<body>
+<header></header>
+<section id="contenido1">
 		
 
 			<article>
 				<h3>Modificar Usuarios</h3>
 			</article>
 
-			<article id = "Contactform">			
-				<form name="formModUsuarios" action="modificarUsuarios.proc.php" method="get">
+			<article id = "letrasregistro">			
+				<form name="formModUsuarios" action="modificarUsuarios.proc.php" method="post">
 					<input type="hidden" name="idUsuario" value="<?php echo $prod['id_usuario']; ?>">
 
 					<strong>Nombre del Usuario:</strong><br/>
@@ -50,7 +55,7 @@
 							<?php
 							/*hacemos un form y rellenamos el select o combobox*/
 							/*include conexion.php etc.... la conexion antes que nada......*/
-							$con = mysqli_connect('localhost', 'root', 'DAW22015', 'bd_mycontacts');
+							
 							$sql = mysqli_query($con, "SELECT * FROM nivel, usuario WHERE `usuario`.`id_usuario` = '$_SESSION[id]' AND `usuario`.`mail_usuario` = '$_SESSION[mail]'");
 
 
@@ -61,8 +66,8 @@
 							?>
 
 					</select>
-
-					<input id="botonFormModContacto" type="submit" value="Submit">
+					<br>
+					<input class="myButton1" id="botonFormModContacto" type="submit" value="Modifica el usuario">
 				</form>
 			</article>
 
@@ -72,8 +77,14 @@
 		mysqli_close($con);
 		?>
 		<br/><br/>
-		<article>
-			<a font color= "black" href="administrarusuarios.php">Volver</a>
+		<article class="myButton1">
+			<br>
+			<a href="principal.php">Volver</a>
 		</article>
+		</section>
+		<footer id="piepagina">
+      <p id="componentes">Raúl Calvo - Víctor Cruz - Eric Sánchez</p>
+      <p id="copyright">2016 &copy; MyContacts</p>
+    </footer>
 	</body>
 </html>

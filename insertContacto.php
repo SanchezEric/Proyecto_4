@@ -42,15 +42,21 @@
           });
       }
     </script>
+		<style>
+	    	a {color: blue;}
+	    </style>
 	</head>
-	<body onload="initialize()">
+<body onload="initialize()">
+			<header></header>
+	<section id="contenidomapa">
+	
 
 		<article>
 				<h3>Insertar Contacto</h3>
 			</article>
 
-			<article id = "Contactform">			
-				<form name="formInserContacto" action="InsertContacto.proc.php" method="get">
+			<article id = "letrasregistro">			
+				<form name="formInserContacto" action="InsertContacto.proc.php" method="post">
 					
 					<strong>Nombre:</strong><br/>
 					<input type="text" name="nomCont" size="20" maxlength="25" required/><br/><br/>
@@ -85,8 +91,11 @@
 					<!-- Trabajo ubicacion -->
 					T.lat<input type="text" name="trabajolatCont" size="5" maxlength="8" /><br/><br/>
 					T.long<input type="text" name="trabajolonCont" size="5" maxlength="8" /><br/><br/>
-					<input id="botonFormModContacto" type="submit" value="Submit">
-						 </br></br>
+					<input class="myButton1" id="botonFormModContacto" type="submit" value="Inserta el contacto">
+						 <article class="myButton1">
+								<br>
+								<a href="principal.php">Volver</a>
+							</article></br></br><br>
 						 Tambien puedes seleccionar tu ubicación mediante el mapa:
 						</br>
 						 <input id="address" type="textbox" value="" />
@@ -101,8 +110,11 @@
 		mysqli_close($con);
 		?>
 		<br/><br/>
-		<article>
-			<a font color= "black" href="gestionarcontactos.php">Volver</a>
-		</article>
+		
+		</section>
+		<footer id="piepagina">
+      <p id="componentes">Raúl Calvo - Víctor Cruz - Eric Sánchez</p>
+      <p id="copyright">2016 &copy; MyContacts</p>
+    </footer>
 	</body>
 </html>

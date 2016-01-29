@@ -13,11 +13,14 @@
 		<title>Usuarios de la pagina web</title>
 	    <!-- full d'estils per a fer servir fonts d'icons -->
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	    <link rel="stylesheet" type="text/css" href="style.css">
 	    <style>
 	    	a {color: blue;}
 	    </style>
 	</head>
 	<body>
+		<header></header>
+		<section id="contenido">
 		<?php
 			//realizamos la conexión con mysql
 			$con = mysqli_connect('localhost','root','DAW22015','bd_mycontacts');
@@ -75,6 +78,13 @@
 			mysqli_close($con);
 		?>
 		<br/><br/>
-		<p><a href="principal.php">Volver</a></p>
+		<article class="myButton1">
+		<a href="principal.php">Volver</a>
+		</article>
+	</section>
+		<footer id="piepagina">
+      <p id="componentes">Raúl Calvo - Víctor Cruz - Eric Sánchez</p>
+      <p id="copyright">2016 &copy; MyContacts</p>
+    </footer>
 	</body>
 </html>

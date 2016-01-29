@@ -17,8 +17,8 @@
 				<h3>Insertar Usuarios</h3>
 			</article>
 
-			<article id = "Contactform">			
-				<form name="formInsertUsuarios" action="InsertUsuario.proc.php" method="get">
+			<article id ="letrasregistro">			
+				<form name="formInsertUsuarios" action="InsertUsuario.proc.php" method="post">
 			
 					<strong>Nombre del Usuario:</strong><br/>
 					<input type="text" name="nomUsuario" size="20" maxlength="25" required/><br/><br/>

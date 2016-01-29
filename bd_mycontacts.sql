@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-01-2016 a las 09:25:07
+-- Tiempo de generación: 29-01-2016 a las 13:29:27
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -46,8 +46,8 @@ INSERT INTO `contacto` (`id_contacto`, `nombre_contacto`, `apellidos_contacto`, 
 (7, 'Antonio', 'Gala Perez', 7, 3),
 (9, 'Paco', 'Porras', 8, 6),
 (16, 'Eric', 'Sanchez Cherto', 24, 1),
-(20, 'oriol', 'toca pelotas', 28, 7),
-(21, 'Teneis', 'Clinex', 29, 8);
+(20, 'Oriol', 'Jansa Peña', 28, 7),
+(21, 'Dani ', 'Lorenzo', 29, 8);
 
 -- --------------------------------------------------------
 
@@ -67,11 +67,11 @@ CREATE TABLE IF NOT EXISTS `lista` (
 --
 
 INSERT INTO `lista` (`id_lista`, `id_usuario`, `nombre_lista`, `descripcion_lista`) VALUES
-(1, 1, 'Colegas del barrio totale', 'Grupo de los amigos de toda la vida del barrio'),
+(1, 1, 'Colegas del barrio ', 'Grupo de los amigos de toda la vida del barrio'),
 (3, 2, 'Hermanos de no sangre', 'La familia que no se escoge loko'),
 (6, NULL, 'Sin Lista', 'Usuarios sin lista'),
-(7, 1, 'prueba1', 'lista de prueba'),
-(8, 3, 'Lista del grandioso chert', 'El cherto guan');
+(7, 1, 'Colegio', 'Amigos del cole'),
+(8, 3, 'Trabajo', 'Lista del trabajo');
 
 -- --------------------------------------------------------
 
@@ -120,7 +120,7 @@ INSERT INTO `ubicacion` (`id_ubicacion`, `casa_lat`, `casa_lon`, `trabajo_lat`, 
 (7, '41.3662135', '2.0715953', NULL, NULL),
 (8, '41.3676481', '2.0789006', NULL, NULL),
 (24, '41.39622', '2.111699', '', ''),
-(28, '41.365216', '2.131649', '', ''),
+(28, '', '', '', ''),
 (29, '41.349776', '2.107320', '', '');
 
 -- --------------------------------------------------------
@@ -145,7 +145,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `password`, `nombre_usuario`, `apellidos_usuario`, `mail_usuario`, `direccion_usuario`, `telefono_usuario`, `nivel_usuario`) VALUES
-(1, '81dc9bdb52d04dc20036dbd8313ed055', 'Victorciyo', 'Cruz Lara', 'victor.cruz@gmail.com', 'Calle Francia', '933366987', 3),
+(1, '81dc9bdb52d04dc20036dbd8313ed055', 'Victor', 'Cruz Lara', 'victor.cruz@gmail.com', 'Calle Francia', '933366987', 3),
 (2, '81dc9bdb52d04dc20036dbd8313ed055', 'Raul', 'Calvo Ramiro', 'fcb_raul@hotmail.com', 'Calle Frederic Soler', '933754212', 3),
 (3, '81dc9bdb52d04dc20036dbd8313ed055', 'eric', 'sanchez cherto', 'eric.sanchez@gmail.com', 'calle manolo', '123456789', 3),
 (4, '81dc9bdb52d04dc20036dbd8313ed055', 'administrador', 'administrador', 'admin@gmail.com', NULL, NULL, 2),
