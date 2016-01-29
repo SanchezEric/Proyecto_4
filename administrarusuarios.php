@@ -73,7 +73,7 @@
 
 			</table>
 
-			<a href="insertar.php"><i class='fa fa-plus-square fa-2x fa-pull-left fa-border'></i></a>
+			
 
 
 

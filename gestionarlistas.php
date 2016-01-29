@@ -11,6 +11,7 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>Usuarios de la pagina web</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
 	    <!-- full d'estils per a fer servir fonts d'icons -->
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	    <style>

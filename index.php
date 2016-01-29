@@ -21,7 +21,7 @@
 		echo "<p><input type='password' class='cuadrostexto' name='password'></p>";
 		echo "<p><input type='submit' name='submit' value='Identificarse'>";
 		echo "</form>";
-		echo "<p><form id='form1' action='registro.php'><input type=submit value='Registrate'></form></p>";
+		echo "<p><form id='form1' action='InsertUsuario.php'><input type=submit value='Registrate'></form></p>";
 		echo "</div>";
 	}
 

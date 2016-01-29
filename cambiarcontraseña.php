@@ -30,7 +30,7 @@
 					<input type="hidden" name="idUsuario" value="<?php echo $prod['id_usuario']; ?>">
 
 					<strong>Password:</strong><br/>
-					<input type="text" name="password" size="20" maxlength="25" value="<?php echo $prod['password']; ?>"/><br/><br/>
+					<input type="text" name="passwordUS" size="20" maxlength="25" value="<?php echo $prod['password']; ?>"/><br/><br/>
 					
 
 					<input id="botonFormModContacto" type="submit" value="Submit">
